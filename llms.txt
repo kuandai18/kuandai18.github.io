@@ -19,9 +19,9 @@
 
 ## 友情链接
 
-- [jdjdndn.github.io](https://jdjdndn.github.io/)
-- [wcbblll.cc](https://wcbblll.cc)
-- [dlhaoka.com](https://dlhaoka.com)
+- [券宝](https://jdjdndn.github.io/): 券宝优惠信息站点。
+- [优惠聚合](https://wcbblll.cc): 优惠聚合信息站点。
+- [号卡办理中心](https://dlhaoka.com): 号卡线上办理中心。
 
 ## 说明
 

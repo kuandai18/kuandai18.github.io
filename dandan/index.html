@@ -64,6 +64,16 @@
           "@type": "Question",
           "name": "遇到问题找谁？",
           "acceptedAnswer": { "@type": "Answer", "text": "装机、故障、售后都通过官方页面客服通道处理，本站仅提供导航，不参与办理与售后环节。" }
+        },
+        {
+          "@type": "Question",
+          "name": "号卡和宽带可以一起办吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以，在官方页面分别选择对应商品提交即可；本页办理入口直达官方页，切换到宽带标签即可办理宽带。" }
+        },
+        {
+          "@type": "Question",
+          "name": "宽带装好后电视怎么看？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可通过官方页面了解配套的电视服务选项，是否可选与资费以官方页面实时显示为准。" }
         }
       ]
     }
@@ -216,6 +226,8 @@ a:hover { text-decoration: underline; text-underline-offset: 4px; }
   border-radius: var(--radius); padding: 0;
 }
 html.js .flip-card { cursor: pointer; }
+/* 透视容器：为 3D 翻转提供景深（rotateY 立体感的必要条件） */
+.flip-wrap { perspective: 1400px; }
 .flip-inner {
   position: relative; display: block;
   transform-style: preserve-3d; transition: transform .55s cubic-bezier(.2, .7, .2, 1);
@@ -225,9 +237,8 @@ html.js .flip-card[aria-pressed="true"] .flip-inner { transform: rotateY(180deg)
   html.js .flip-card:not([aria-pressed="true"]):hover .flip-inner { transform: rotateY(180deg); }
 }
 .flip-face {
-  background: var(--c-glass);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  /* 预混玻璃渐变替代 backdrop-filter：后者会拍平 3D 渲染上下文，导致翻转后两面均不可见 */
+  background: linear-gradient(160deg, rgba(255, 255, 255, .82), rgba(255, 238, 214, .60));
   border: 1.5px solid var(--c-glass-line);
   border-radius: var(--radius);
   box-shadow: 0 14px 40px rgba(240, 123, 22, .10);
@@ -263,6 +274,16 @@ html.js .flip-detail { display: none; }
   .egg-node { width: 230px; min-height: 300px; padding: 30px 22px; }
   .egg-link { height: 0; width: 34px; border-left: none; border-top: 3px dashed rgba(240, 123, 22, .5); }
 }
+
+/* ===== 新手课堂：号卡与宽带区别三卡（Phase B 内容增强，复用玻璃卡词汇） ===== */
+.guide-card {
+  padding: 30px 26px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; min-height: 220px;
+}
+.guide-card .icon { width: 40px; height: 40px; stroke-width: 1.8; color: var(--c-primary); }
+.guide-card h3 { font-weight: 800; font-size: 19px; }
+.guide-card p { color: var(--c-text-sub); font-size: 15px; line-height: 1.75; }
 
 /* ===== FAQ 玻璃折叠卡 ===== */
 .faq-list { display: grid; gap: 14px; }
@@ -472,6 +493,33 @@ html.js .flip-detail { display: none; }
   </div>
 </section>
 
+<!-- ===== 新手课堂：号卡和宽带的区别（Phase B 内容增强，插在流程与 FAQ 之间） ===== -->
+<section class="section" id="guide" aria-labelledby="h-guide">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-guide">新手一看就会：号卡和宽带的区别</h2>
+      <p>不少朋友冲着宽带点进官方页，却先看到满屏号卡——三张卡片讲清两件商品的门道。</p>
+    </div>
+    <div class="flip-grid">
+      <article class="glass guide-card">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+        <h3>一个管出门，一个管在家</h3>
+        <p>号卡是手机用的移动流量卡；宽带是光纤入户的家庭固定网络，供电视、电脑、智能设备共享。</p>
+      </article>
+      <article class="glass guide-card">
+        <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+        <h3>为什么办宽带会先看到号卡</h3>
+        <p>官方办理页同时销售两类商品，默认展示号卡分类——这正是本页反复提示“切换到宽带标签”的原因。</p>
+      </article>
+      <article class="glass guide-card">
+        <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+        <h3>切换只需一步</h3>
+        <p>进入官方页后点击顶部“宽带”分类标签即可，其余办理流程与号卡一致。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FAQ：首问即切换指引（FR-010 / FR-013；文本与 FAQPage JSON-LD 逐字一致） ===== -->
 <section class="section" id="faq" aria-labelledby="h-faq">
   <div class="wrap">
@@ -499,6 +547,14 @@ html.js .flip-detail { display: none; }
       <details class="faq-item glass">
         <summary>遇到问题找谁？<span class="faq-toggle" aria-hidden="true">+</span></summary>
         <div class="faq-body"><p>装机、故障、售后都通过官方页面客服通道处理，本站仅提供导航，不参与办理与售后环节。</p></div>
+      </details>
+      <details class="faq-item glass">
+        <summary>号卡和宽带可以一起办吗？<span class="faq-toggle" aria-hidden="true">+</span></summary>
+        <div class="faq-body"><p>可以，在官方页面分别选择对应商品提交即可；本页办理入口直达官方页，切换到宽带标签即可办理宽带。</p></div>
+      </details>
+      <details class="faq-item glass">
+        <summary>宽带装好后电视怎么看？<span class="faq-toggle" aria-hidden="true">+</span></summary>
+        <div class="faq-body"><p>可通过官方页面了解配套的电视服务选项，是否可选与资费以官方页面实时显示为准。</p></div>
       </details>
     </div>
   </div>
@@ -541,9 +597,9 @@ html.js .flip-detail { display: none; }
           <section>
             <h3>外部站点</h3>
             <ul>
-              <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">jdjdndn.github.io<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
-              <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">wcbblll.cc<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
-              <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">dlhaoka.com<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+              <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">券宝<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+              <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">优惠聚合<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+              <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">号卡办理中心<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
             </ul>
           </section>
         </div>
@@ -568,10 +624,9 @@ html.js .flip-detail { display: none; }
   root.classList.add('js');
 
   /**
-   * 翻转卡三通道交互：hover 由 CSS 处理，此处接管点击与 Enter/Space 键盘翻面，
-   * 状态同步 aria-pressed（屏幕阅读器可感知）。
+   * 翻转卡交互：hover 由 CSS 处理（移出自然翻回），此处接管点击与
+   * Enter/Space 键盘翻面，状态同步 aria-pressed（屏幕阅读器可感知）。
    */
-  var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
   Array.prototype.forEach.call(document.querySelectorAll('.flip-card'), function (card) {
     card.addEventListener('click', function () {
       var pressed = card.getAttribute('aria-pressed') === 'true';
@@ -584,12 +639,6 @@ html.js .flip-detail { display: none; }
         card.setAttribute('aria-pressed', pressed ? 'false' : 'true');
       }
     });
-    /* 纯悬停设备：移出时若未点击锁定则自动翻回 */
-    if (canHover) {
-      card.addEventListener('mouseleave', function () {
-        if (card.getAttribute('aria-pressed') !== 'true') { /* CSS hover 态自然复位 */ }
-      });
-    }
   });
 
   /**

@@ -20,12 +20,12 @@
 <style>
 /* ============================================================
    172宽带子站 · 新拟态（Soft UI）清新数字风（design.md §1.3.3）
-   配色：浅冷灰 #E8ECF1 / 青绿 #0E7C66 / 正文 #26313B
+   配色：浅冷灰 #E8ECF1 / 青绿 #0B6B57 / 正文 #26313B
    版式：全站唯一的居中窄栏单列布局（max-width: 880px）
    ============================================================ */
 :root {
   --c-bg: #E8ECF1;
-  --c-primary: #0E7C66;
+  --c-primary: #0B6B57;
   --c-primary-deep: #0A5F4F;
   --c-text: #26313B;
   --c-sub: #4A5A68;
@@ -172,6 +172,13 @@ a { color: var(--c-primary); }
 .step-card h3 { font-size: 1.02rem; margin-bottom: .35rem; }
 .step-card p { color: var(--c-sub); font-size: .9rem; }
 
+/* ---- 装机前小知识：全屋 Wi-Fi 覆盖（Phase B 内容增强） ---- */
+.knowledge { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+.knowledge-card { padding: 1.6rem 1.4rem; }
+.knowledge-card .matrix-icon { margin-bottom: .9rem; }
+.knowledge-card h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+.knowledge-card p { color: var(--c-sub); font-size: .92rem; }
+
 /* ---- FAQ ---- */
 .faq-list { display: grid; gap: 1.1rem; }
 .faq-item { padding: 0; overflow: hidden; }
@@ -206,6 +213,7 @@ a { color: var(--c-primary); }
   .hero-figure { display: none; }
   .matrix { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
+  .knowledge { grid-template-columns: 1fr; }
   .header-inner { justify-content: center; }
 }
 
@@ -248,7 +256,11 @@ a { color: var(--c-primary); }
         { "@type": "Question", "name": "172宽带的套餐资费是多少？",
           "acceptedAnswer": { "@type": "Answer", "text": "本站为办理指引页，不展示具体资费；办理将在渠道官方页面完成，资费以官方页面为准。" } },
         { "@type": "Question", "name": "如何确认所在地址能否办理？",
-          "acceptedAnswer": { "@type": "Answer", "text": "覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。" } }
+          "acceptedAnswer": { "@type": "Answer", "text": "覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。" } },
+        { "@type": "Question", "name": "师傅上门安装大概需要做什么？",
+          "acceptedAnswer": { "@type": "Answer", "text": "上门后核对地址与套餐、布线入户、安装调测光猫并联网验证，全程按官方页面预约的时段进行，具体以装维师傅现场沟通为准。" } },
+        { "@type": "Question", "name": "家里已经布好网线还能用吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "已预埋网线的房屋可直接利用原有端口，装机时告知师傅即可，是否可用以现场勘察结果为准。" } }
       ]
     }
   ]
@@ -419,7 +431,34 @@ a { color: var(--c-primary); }
     </div>
   </section>
 
-  <!-- ⑤ FAQ -->
+  <!-- ⑤ 装机前小知识：全屋 Wi-Fi 覆盖（Phase B 内容增强，与带宽测算器呼应） -->
+  <section class="section" aria-labelledby="wifi-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="wifi-title">装机前小知识：全屋 Wi-Fi 覆盖</h2>
+        <p>选好带宽档位之后，也别让全屋 Wi-Fi 覆盖拖了后腿：三个小知识帮你在装机前把信号布局想清楚。</p>
+      </div>
+      <div class="knowledge">
+        <article class="card knowledge-card">
+          <div class="matrix-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-router"/></svg></div>
+          <h3>路由器摆中间</h3>
+          <p>尽量放在房屋中心位置的开放台面，避开金属柜、微波炉、鱼缸等干扰物；把路由器塞进弱电箱，是最常见的覆盖减半原因。</p>
+        </article>
+        <article class="card knowledge-card">
+          <div class="matrix-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-zap"/></svg></div>
+          <h3>穿墙衰减</h3>
+          <p>每堵承重墙都会明显削弱信号，复式/大户型优先考虑多点位组网（mesh），而非单纯换更大功率路由。</p>
+        </article>
+        <article class="card knowledge-card">
+          <div class="matrix-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg></div>
+          <h3>先测后调</h3>
+          <p>装机完成后在每个常待的房间各测一次，再决定是否加装组网设备；测速时贴近路由 1 米与远端房间各测一组做对比。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ FAQ -->
   <section class="section" aria-labelledby="faq-title">
     <div class="container">
       <div class="section-head">
@@ -447,11 +486,19 @@ a { color: var(--c-primary); }
           <summary><h3>如何确认所在地址能否办理？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
           <p class="faq-answer">覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。</p>
         </details>
+        <details class="card faq-item">
+          <summary><h3>师傅上门安装大概需要做什么？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">上门后核对地址与套餐、布线入户、安装调测光猫并联网验证，全程按官方页面预约的时段进行，具体以装维师傅现场沟通为准。</p>
+        </details>
+        <details class="card faq-item">
+          <summary><h3>家里已经布好网线还能用吗？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">已预埋网线的房屋可直接利用原有端口，装机时告知师傅即可，是否可用以现场勘察结果为准。</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- ⑥ 底部 CTA -->
+  <!-- ⑦ 底部 CTA -->
   <section class="section" aria-labelledby="cta-title">
     <div class="container">
       <div class="card final-cta">
@@ -475,9 +522,9 @@ a { color: var(--c-primary); }
         <li><a href="../kaka/index.html">咔咔通信宽带</a></li>
         <li><a href="../dandan/index.html">蛋蛋宽带</a></li>
         <li><a href="../lingqu/index.html">灵渠宽带</a></li>
-        <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">jdjdndn.github.io</a></li>
-        <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">wcbblll.cc</a></li>
-        <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">dlhaoka.com</a></li>
+        <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">券宝</a></li>
+        <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">优惠聚合</a></li>
+        <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">号卡办理中心</a></li>
       </ul>
     </nav>
     <p class="footer-note">本站为172宽带办理指引页（非渠道官方网站），办理将在渠道官方页面完成，资费以官方页面为准。</p>

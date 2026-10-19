@@ -64,6 +64,16 @@
           "@type": "Question",
           "name": "办理和使用中遇到问题找谁？",
           "acceptedAnswer": { "@type": "Answer", "text": "装机排期、使用故障、售后报修等问题，都通过官方页面的客服通道反馈处理；本站不参与办理与售后环节。" }
+        },
+        {
+          "@type": "Question",
+          "name": "办理时需要准备什么信息？",
+          "acceptedAnswer": { "@type": "Answer", "text": "通常需要装机地址、联系人信息与身份信息，提交后按官方页面提示完成即可，具体清单以官方页面要求为准。" }
+        },
+        {
+          "@type": "Question",
+          "name": "可以由家人代为办理吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以由同住家人按官方页面流程提交，装机当天建议本人在场验收，具体要求以官方页面说明为准。" }
         }
       ]
     }
@@ -274,7 +284,7 @@ a:hover { background: var(--c-accent); }
 
 /* ===== 响应式断点（768 / 1024 / 1440） ===== */
 @media (min-width: 768px) {
-  .toc { grid-template-columns: repeat(4, 1fr); }
+  .toc { grid-template-columns: repeat(5, 1fr); }
   .link-groups { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 1024px) {
@@ -335,8 +345,9 @@ a:hover { background: var(--c-accent); }
     <nav class="toc" aria-label="本期目录">
       <a href="#highlights"><span class="no" aria-hidden="true">01</span>亮点速览</a>
       <a href="#process"><span class="no" aria-hidden="true">02</span>办理流程</a>
-      <a href="#faq"><span class="no" aria-hidden="true">03</span>常见问答</a>
-      <a href="#apply"><span class="no" aria-hidden="true">04</span>立即办理</a>
+      <a href="#column"><span class="no" aria-hidden="true">03</span>办前提醒</a>
+      <a href="#faq"><span class="no" aria-hidden="true">04</span>常见问答</a>
+      <a href="#apply"><span class="no" aria-hidden="true">05</span>立即办理</a>
     </nav>
   </div>
 </section>
@@ -419,14 +430,47 @@ a:hover { background: var(--c-accent); }
   </div>
 </section>
 
-<!-- ===== 03 常见问答：手风琴（FR-013 覆盖带宽/周期/覆盖/资费；文本与 FAQPage JSON-LD 逐字一致） ===== -->
-<section class="chapter" id="faq" data-section="faq" aria-labelledby="h-faq">
+<!-- ===== 03 编辑部专栏：办理宽带前的四个提醒（Phase B 内容增强） ===== -->
+<section class="chapter" id="column" data-section="column" aria-labelledby="h-column">
   <div class="wrap">
     <div class="chapter-head">
       <span class="chapter-no" aria-hidden="true">03</span>
+      <h2 class="chapter-title" id="h-column">编辑部专栏：办理宽带前的四个提醒</h2>
+    </div>
+    <p class="chapter-desc">编辑导语：签约之前，建议先核对这四件事——都是读者来信里反复出现过的经验教训。</p>
+    <div class="index-list">
+      <article class="index-item">
+        <span class="index-no" aria-hidden="true">一</span>
+        <h3>先查覆盖再比价</h3>
+        <p>任何套餐谈之前，第一件事是确认地址可装。覆盖没有确认，比价都是空谈——先进官方页面填写装机地址做覆盖校验，再回头比较档位。</p>
+      </article>
+      <article class="index-item">
+        <span class="index-no" aria-hidden="true">二</span>
+        <h3>看总成本不只看月费</h3>
+        <p>留意安装调试费、设备押金或选购费用等一次性项目，均以官方页面展示为准。把一次性项目与月费放在一起算总账，才是完整的办理成本。</p>
+      </article>
+      <article class="index-item">
+        <span class="index-no" aria-hidden="true">三</span>
+        <h3>问清合约期</h3>
+        <p>了解套餐周期与到期后的处理方式，避免被动续约。办理前在官方页面确认合约时长与到期规则，心里有数再下单。</p>
+      </article>
+      <article class="index-item">
+        <span class="index-no" aria-hidden="true">四</span>
+        <h3>留好办理凭证</h3>
+        <p>提交申请后保存记录，便于后续跟进装机进度；官方页面的提交凭证与客服沟通记录，都值得留档备查。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 常见问答：手风琴（FR-013 覆盖带宽/周期/覆盖/资费；文本与 FAQPage JSON-LD 逐字一致） ===== -->
+<section class="chapter" id="faq" data-section="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="chapter-head">
+      <span class="chapter-no" aria-hidden="true">04</span>
       <h2 class="chapter-title" id="h-faq">常见问答</h2>
     </div>
-    <p class="chapter-desc">编辑导语：读者来信里问得最多的五个问题，统一答复如下；答案里凡涉及资费与排期，均以官方页面为准。</p>
+    <p class="chapter-desc">编辑导语：读者来信里问得最多的几个问题，统一答复如下；答案里凡涉及资费与排期，均以官方页面为准。</p>
     <div class="faq-list">
       <details class="faq-item">
         <summary>带宽档位该怎么选？<span class="faq-mark" aria-hidden="true">+</span></summary>
@@ -448,15 +492,23 @@ a:hover { background: var(--c-accent); }
         <summary>办理和使用中遇到问题找谁？<span class="faq-mark" aria-hidden="true">+</span></summary>
         <div class="faq-answer"><div><p>装机排期、使用故障、售后报修等问题，都通过官方页面的客服通道反馈处理；本站不参与办理与售后环节。</p></div></div>
       </details>
+      <details class="faq-item">
+        <summary>办理时需要准备什么信息？<span class="faq-mark" aria-hidden="true">+</span></summary>
+        <div class="faq-answer"><div><p>通常需要装机地址、联系人信息与身份信息，提交后按官方页面提示完成即可，具体清单以官方页面要求为准。</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary>可以由家人代为办理吗？<span class="faq-mark" aria-hidden="true">+</span></summary>
+        <div class="faq-answer"><div><p>可以由同住家人按官方页面流程提交，装机当天建议本人在场验收，具体要求以官方页面说明为准。</p></div></div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- ===== 04 立即办理：黑底黄字超大按钮（FR-008 第 2 处办理入口） ===== -->
+<!-- ===== 05 立即办理：黑底黄字超大按钮（FR-008 第 2 处办理入口） ===== -->
 <section class="chapter cta-final" id="apply" data-section="apply" aria-labelledby="h-apply">
   <div class="wrap">
     <div class="chapter-head">
-      <span class="chapter-no" aria-hidden="true">04</span>
+      <span class="chapter-no" aria-hidden="true">05</span>
       <h2 class="chapter-title" id="h-apply">立即办理</h2>
     </div>
     <p class="chapter-desc">读到这里还没走？那就别等了——点击下方按钮直达咔咔通信官方办理页，今天下单，早点装通。</p>
@@ -487,9 +539,9 @@ a:hover { background: var(--c-accent); }
         <section>
           <h3>外部站点</h3>
           <ul>
-            <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">jdjdndn.github.io<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
-            <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">wcbblll.cc<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
-            <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">dlhaoka.com<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+            <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">券宝<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+            <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">优惠聚合<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+            <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">号卡办理中心<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
           </ul>
         </section>
       </div>
@@ -523,8 +575,18 @@ a:hover { background: var(--c-accent); }
     var ratio = max > 0 ? doc.scrollTop / max : 0;
     bar.style.width = (Math.min(1, Math.max(0, ratio)) * 100).toFixed(2) + '%';
   }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
+  /* rAF 节流：同一帧内多次 scroll/resize 只合并为一次样式写入 */
+  var rafPending = false;
+  function scheduleUpdate() {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(function () {
+      rafPending = false;
+      updateProgress();
+    });
+  }
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate);
   updateProgress();
 
   /**

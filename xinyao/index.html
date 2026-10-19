@@ -198,6 +198,14 @@ a { color: var(--c-cta); }
 }
 .bento-note { color: var(--c-sub); font-size: .85rem; margin-top: 1.4rem; }
 
+/* ---- 租房宽带办理指南（补丁 08 · Phase B）：三卡 Bento，宽屏三等分 ---- */
+@media (min-width: 1024px) {
+  .bento-grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1023px) {
+  .bento-grid-3 .bento-card:last-child { grid-column: 1 / -1; }
+}
+
 /* ---- 流程：胶囊步骤横排 ---- */
 .steps {
   display: grid; grid-template-columns: repeat(2, 1fr);
@@ -327,7 +335,15 @@ a { color: var(--c-cta); }
         { "@type": "Question", "name": "好卡新耀宽带的资费是多少？",
           "acceptedAnswer": { "@type": "Answer", "text": "本站为办理指引页，不展示具体资费；办理将在渠道官方页面完成，资费以官方页面为准。" } },
         { "@type": "Question", "name": "如何确认所在地址能否办理？",
-          "acceptedAnswer": { "@type": "Answer", "text": "覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。" } }
+          "acceptedAnswer": { "@type": "Answer", "text": "覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。" } },
+        { "@type": "Question", "name": "租的房子能办宽带吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以，多数情况下租户凭租房信息即可办理；个别小区或套餐可能有额外要求，以官方页面填写装机地址后的校验结果为准。" } },
+        { "@type": "Question", "name": "以后搬家了宽带怎么办？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可先在官方页面查询新地址是否覆盖，支持的话申请移机；不支持则按官方页面流程退订，具体政策以官方页面为准。" } },
+        { "@type": "Question", "name": "合租的宽带费用怎么分摊比较合理？",
+          "acceptedAnswer": { "@type": "Answer", "text": "建议入住前与室友约定好分摊方式，可以按人数平摊，也可以按房间或使用习惯协商；同时明确由谁负责缴费、如何互相结算，并保留好约定记录。套餐档位与资费以官方页面信息为准，具体以官方确认为准。" } },
+        { "@type": "Question", "name": "先租好房还是先办宽带？",
+          "acceptedAnswer": { "@type": "Answer", "text": "建议先确定租房合同与实际安装地址，再提交宽带申请，避免中途换房造成重复办理；若租期较短，可优先关注支持灵活周期的套餐，是否可选以官方页面信息为准，具体以官方确认为准。" } }
       ]
     }
   ]
@@ -460,7 +476,34 @@ a { color: var(--c-cta); }
     </div>
   </section>
 
-  <!-- ④ FAQ -->
+  <!-- ④ 租房宽带办理指南（补丁 08 · Phase B 内容增强） -->
+  <section class="section" aria-labelledby="rental-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="rental-title">租房宽带<span class="grad-text">办理指南</span></h2>
+        <p>为租客整理的三个实用提醒</p>
+      </div>
+      <div class="bento-grid bento-grid-3">
+        <article class="bento-card">
+          <div class="bento-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg></div>
+          <h3>按租期选</h3>
+          <p>短租优先找支持按月/灵活周期的套餐；整年租约再考虑长周期档位，避免提前退租的剩余周期问题。签约前先和房东或中介确认租期起止，再对照官方页面可选的套餐周期做选择；短租换长租或提前退租时，记得先在官方页面查看变更与退订规则，再决定是否调整档位。</p>
+        </article>
+        <article class="bento-card">
+          <div class="bento-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-home"/></svg></div>
+          <h3>搬家怎么办</h3>
+          <p>同城搬家前先在官方页面确认新地址覆盖，再办理移机；跨城通常需退订后在新城市重新办理。移机前可与官方客服确认设备是否需要更换、旧地址套餐如何结转；跨城退订时先结清当前套餐，再在新城市重新提交申请，避免出现服务空档，具体政策以官方页面信息为准。</p>
+        </article>
+        <article class="bento-card">
+          <div class="bento-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+          <h3>退订留凭证</h3>
+          <p>退订时保留官方页面提交记录与客服沟通记录，设备归还要求以官方页面说明为准。建议同时保留订单编号、退订确认页面截图与设备归还凭证，方便后续查询进度或处理异议；如遇设备押金问题，优先通过官方客服渠道沟通解决。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ FAQ -->
   <section class="section" aria-labelledby="faq-title">
     <div class="container">
       <div class="section-head">
@@ -488,11 +531,27 @@ a { color: var(--c-cta); }
           <summary><h3>如何确认所在地址能否办理？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
           <p class="faq-answer">覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。</p>
         </details>
+        <details class="faq-item">
+          <summary><h3>租的房子能办宽带吗？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">可以，多数情况下租户凭租房信息即可办理；个别小区或套餐可能有额外要求，以官方页面填写装机地址后的校验结果为准。</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>以后搬家了宽带怎么办？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">可先在官方页面查询新地址是否覆盖，支持的话申请移机；不支持则按官方页面流程退订，具体政策以官方页面为准。</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>合租的宽带费用怎么分摊比较合理？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">建议入住前与室友约定好分摊方式，可以按人数平摊，也可以按房间或使用习惯协商；同时明确由谁负责缴费、如何互相结算，并保留好约定记录。套餐档位与资费以官方页面信息为准，具体以官方确认为准。</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>先租好房还是先办宽带？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">建议先确定租房合同与实际安装地址，再提交宽带申请，避免中途换房造成重复办理；若租期较短，可优先关注支持灵活周期的套餐，是否可选以官方页面信息为准，具体以官方确认为准。</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- ⑤ 底部渐变大 CTA 卡 -->
+  <!-- ⑥ 底部渐变大 CTA 卡 -->
   <section class="section" aria-labelledby="cta-title">
     <div class="container">
       <div class="final-cta">
@@ -518,9 +577,9 @@ a { color: var(--c-cta); }
         <li><a href="../kaka/index.html">咔咔通信宽带</a></li>
         <li><a href="../dandan/index.html">蛋蛋宽带</a></li>
         <li><a href="../lingqu/index.html">灵渠宽带</a></li>
-        <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">jdjdndn.github.io</a></li>
-        <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">wcbblll.cc</a></li>
-        <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">dlhaoka.com</a></li>
+        <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">券宝</a></li>
+        <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">优惠聚合</a></li>
+        <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">号卡办理中心</a></li>
       </ul>
     </nav>
     <p class="footer-note">本站为好卡新耀宽带办理指引页（非渠道官方网站），办理将在渠道官方页面完成，资费以官方页面为准。</p>

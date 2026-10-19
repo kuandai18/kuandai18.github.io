@@ -596,6 +596,15 @@ html.anim .channel-card.is-visible:focus-within {
   .channel-grid { grid-template-columns: repeat(3, 1fr); }
   .guide-steps { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* ===== 三步选宽带（补丁 08 · Phase B）：3 步版流程网格 ===== */
+/* 平板 2 列时第 3 步整行收尾；桌面 3 等分，避免 4 列布局留空 */
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .steps-3 .guide-step:last-child { grid-column: 1 / -1; }
+}
+@media (min-width: 64em) {
+  .steps-3 { grid-template-columns: repeat(3, 1fr); }
+}
 /* ≥1440px：放宽呼吸感 */
 @media (min-width: 90em) {
   :root { --container: 1240px; }

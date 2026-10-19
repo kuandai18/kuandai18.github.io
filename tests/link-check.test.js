@@ -84,6 +84,21 @@ function build(suite) {
     }
   });
 
+  suite.test('外部友链锚文本为规范中文名（券宝/优惠聚合/号卡办理中心）', (t) => {
+    const NAMES = {
+      'https://jdjdndn.github.io/': '券宝',
+      'https://wcbblll.cc': '优惠聚合',
+      'https://dlhaoka.com': '号卡办理中心'
+    };
+    for (const p of CONTENT_PAGES) {
+      for (const a of anchorsByPage.get(p.rel) || []) {
+        const expected = NAMES[a.href];
+        if (!expected) continue;
+        t.equal(a.text, expected, `${p.rel} 外链 ${a.href} 锚文本应为「${expected}」`);
+      }
+    }
+  });
+
   suite.test('全部站外 http(s) 链接均新标签打开且带 noopener（FR-003/017）', (t) => {
     for (const p of ALL_PAGES) {
       for (const a of anchorsByPage.get(p.rel) || []) {

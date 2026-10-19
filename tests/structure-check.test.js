@@ -20,7 +20,7 @@
 const lib = require('./lib');
 const {
   CONTENT_PAGES, ALL_PAGES, SUBSITES,
-  read, extractTags, getAnchors, textContent, findEmoji, loadData, createSuite
+  read, extractTags, getAnchors, getAttr, textContent, findEmoji, loadData, createSuite
 } = lib;
 
 function build(suite) {
@@ -84,6 +84,16 @@ function build(suite) {
       t.ok(/<html[^>]*\blang\s*=\s*["']zh-CN["']/i.test(html), `${p.rel} <html> 未声明 lang="zh-CN"`);
       t.ok(/<meta[^>]*charset\s*=\s*["']?utf-8/i.test(html), `${p.rel} 缺 UTF-8 charset 声明`);
       t.ok(/<meta[^>]*name\s*=\s*["']viewport["']/i.test(html), `${p.rel} 缺 viewport 声明`);
+    }
+  });
+
+  suite.test('每页声明 favicon（<link rel="icon">，8 页含 404）', (t) => {
+    for (const p of ALL_PAGES) {
+      const links = extractTags(htmlByPage.get(p.rel), 'link');
+      const hasIcon = links.some((tag) =>
+        (getAttr(tag, 'rel') || '').toLowerCase().split(/\s+/).includes('icon')
+      );
+      t.ok(hasIcon, `${p.rel} 缺 <link rel="icon">（favicon 声明）`);
     }
   });
 

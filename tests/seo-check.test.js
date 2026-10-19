@@ -24,7 +24,7 @@ const lib = require('./lib');
 const {
   CONTENT_PAGES, ALL_PAGES, SUBSITES, SITE, EXTERNAL_FRIENDS,
   read, getTitle, getMeta, getCanonical, extractJsonLd, findNodesByType,
-  loadData, createSuite
+  decodeEntities, loadData, createSuite
 } = lib;
 
 /** 统计汉字数量（NFR-006：description ≤ 120 汉字） */
@@ -228,6 +228,75 @@ function build(suite) {
         t.equal(item.url, `${SITE}/${d.slug}/`, `ItemList position=${i + 1} url`);
       }
     });
+  });
+
+  suite.test('子站 FAQPage JSON-LD 与页面可见 FAQ 逐字一致（条数/问句/答案）', (t) => {
+    /* 页面 FAQ DOM 因站而异：问句在 <summary>（内含 h3 或装饰 span），答案在
+       .faq-body 或 .faq-answer。先剥离装饰性 span（faq-q/faq-toggle/faq-mark，
+       均为 aria-hidden 编号或加号），再剥全部标签取纯文本。 */
+    const strip = (s) => decodeEntities(String(s).replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+    for (const p of CONTENT_PAGES) {
+      if (p.slug === '') continue; // 主站无 FAQ 板块
+      const html = htmlByPage.get(p.rel);
+      const pageFaq = [];
+      const detailRe = /<details\b[^>]*class="[^"]*faq-item[^"]*"[^>]*>([\s\S]*?)<\/details>/gi;
+      let m;
+      while ((m = detailRe.exec(html)) !== null) {
+        const block = m[1].replace(
+          /<span\b[^>]*class="[^"]*(?:faq-q|faq-toggle|faq-mark)[^"]*"[^>]*>[\s\S]*?<\/span>/gi,
+          ' '
+        );
+        const sm = block.match(/<summary[^>]*>([\s\S]*?)<\/summary>/i);
+        if (!sm) continue;
+        pageFaq.push({
+          q: strip(sm[1]),
+          a: strip(block.slice(sm.index + sm[0].length))
+        });
+      }
+      const jsonFaq = [];
+      for (const b of extractJsonLd(html)) {
+        let obj = null;
+        try { obj = JSON.parse(b); } catch { continue; /* 解析失败已在前置用例报告 */ }
+        for (const f of findNodesByType(obj, 'FAQPage')) {
+          for (const item of (f.mainEntity || [])) {
+            jsonFaq.push({
+              name: item.name,
+              text: item.acceptedAnswer && item.acceptedAnswer.text
+            });
+          }
+        }
+      }
+      t.ok(pageFaq.length >= 3, `${p.rel} 页面可见 FAQ 少于 3 条`);
+      t.equal(pageFaq.length, jsonFaq.length, `${p.rel} 页面 FAQ 条数与 JSON-LD mainEntity 不一致`);
+      const n = Math.min(pageFaq.length, jsonFaq.length);
+      for (let i = 0; i < n; i++) {
+        t.equal(pageFaq[i].q, jsonFaq[i].name, `${p.rel} 第 ${i + 1} 问问句与 JSON-LD 不一致`);
+        t.equal(pageFaq[i].a, jsonFaq[i].text, `${p.rel} 第 ${i + 1} 问答案与 JSON-LD 不一致`);
+      }
+    }
+  });
+
+  suite.test('子站 BreadcrumbList 每个 ListItem 均携带 item URL（结构化数据完整性）', (t) => {
+    for (const p of CONTENT_PAGES) {
+      if (p.slug === '') continue;
+      const crumbs = [];
+      for (const b of extractJsonLd(htmlByPage.get(p.rel))) {
+        let obj = null;
+        try { obj = JSON.parse(b); } catch { continue; }
+        crumbs.push(...findNodesByType(obj, 'BreadcrumbList'));
+      }
+      t.ok(crumbs.length >= 1, `${p.rel} JSON-LD 缺 BreadcrumbList`);
+      for (const c of crumbs) {
+        const items = (c.itemListElement || []).filter((x) => x && x['@type'] === 'ListItem');
+        t.ok(items.length >= 2, `${p.rel} BreadcrumbList ListItem 少于 2 条`);
+        for (const it of items) {
+          t.ok(
+            typeof it.item === 'string' && /^https:\/\//.test(it.item),
+            `${p.rel} BreadcrumbList position=${it.position} 的 ListItem 缺 item URL（Google 要求末级条目必须可解析）`
+          );
+        }
+      }
+    }
   });
 
   suite.test('404.html（附加页）声明 noindex，避免错误页被收录', (t) => {

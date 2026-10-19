@@ -53,12 +53,22 @@
         {
           "@type": "Question",
           "name": "装机大概要等多久？",
-          "acceptedAnswer": { "@type": "Answer", "text": "以官方页面预约时段与当地装维安排为准。常见情况是提交信息后一至三个工作日内上门，具体以官方确认为准。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "以官方页面预约时段与当地装维排期为准，具体以官方确认为准。" }
         },
         {
           "@type": "Question",
           "name": "办完之后遇到网络问题找谁？",
           "acceptedAnswer": { "@type": "Answer", "text": "装机与用网问题请经官方客服通道反馈，进度可查。本站仅做信息导航，不参与办理、装机与售后环节。" }
+        },
+        {
+          "@type": "Question",
+          "name": "老房子能装光纤宽带吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "多数老小区已完成光纤改造，可在官方页面填写地址查询是否覆盖；未覆盖区域以官方页面答复为准。" }
+        },
+        {
+          "@type": "Question",
+          "name": "装机当天家里需要留人吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "需要，师傅上门施工与调测通常要求有人在场配合确认位置并验收，具体安排以官方页面预约为准。" }
         }
       ]
     }
@@ -237,7 +247,7 @@ html.js .reveal.shown { clip-path: inset(0 0 0 0); opacity: 1; transition: clip-
 .footer h2 { font-family: var(--kai); font-weight: 700; font-size: 22px; letter-spacing: .1em; }
 .footer-sub { color: var(--c-text-sub); font-size: 13.5px; margin: 6px 0 26px; }
 .link-groups { display: grid; grid-template-columns: 1fr; gap: 22px; }
-@media (min-width: 768px) { .link-groups { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) { .link-groups { grid-template-columns: repeat(2, 1fr); } }
 .link-groups h3 { font-family: var(--kai); font-size: 14px; letter-spacing: .24em; color: var(--c-cinnabar); margin-bottom: 10px; }
 .footer ul { list-style: none; }
 .footer li { margin: 8px 0; font-size: 14.5px; }
@@ -388,11 +398,44 @@ html.js .seal.stamped { animation: stamp .5s cubic-bezier(.2, 1.4, .4, 1) forwar
   </div>
 </section>
 
-<!-- ===== 问渠：FAQ（FR-013 ≥3 问） ===== -->
-<section class="section section-alt reveal" id="faq" aria-labelledby="h-faq">
+<!-- ===== 行前清单：办宽带前的四件事（Phase B 内容增强，插在流程与 FAQ 之间） ===== -->
+<section class="section section-alt reveal" id="checklist" aria-labelledby="h-checklist">
   <div class="wrap">
     <div class="section-head">
-      <p class="section-tag">其三 · 问渠</p>
+      <p class="section-tag">其三 · 行前</p>
+      <h2 id="h-checklist">行前清单：办宽带前的四件事</h2>
+      <p class="section-desc">渠未开而先备料——四件事办妥，装机当日自然水到渠成。</p>
+    </div>
+    <div class="scenery-list">
+      <article class="scenery">
+        <p class="scenery-no">第一件</p>
+        <h3>核地址</h3>
+        <p>办宽带第一件事，先在官方页面校验装机地址是否覆盖——地址可装，挑套餐、约时段才有意义。</p>
+      </article>
+      <article class="scenery">
+        <p class="scenery-no">第二件</p>
+        <h3>清现场</h3>
+        <p>预留光猫与路由的摆放位置，确认入户位置可施工；师傅上门前把台面与路线腾出来，装机当日省事不少。</p>
+      </article>
+      <article class="scenery">
+        <p class="scenery-no">第三件</p>
+        <h3>约时段</h3>
+        <p>按自己的日程选择上门时段，装机当天保持电话畅通；当天宜有人在家配合，免得师傅白跑一趟。</p>
+      </article>
+      <article class="scenery">
+        <p class="scenery-no">第四件</p>
+        <h3>验收</h3>
+        <p>装机完成后各房间测速确认，再在官方页面确认完成；有疑问当场向师傅提出，当面解决最省心。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 问渠：FAQ（FR-013 ≥3 问） ===== -->
+<section class="section reveal" id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-tag">其四 · 问渠</p>
       <h2 id="h-faq">问渠几问</h2>
       <p class="section-desc">办理之前，先解心中之惑。</p>
     </div>
@@ -407,11 +450,19 @@ html.js .seal.stamped { animation: stamp .5s cubic-bezier(.2, 1.4, .4, 1) forwar
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" aria-hidden="true">问三</span>装机大概要等多久？</summary>
-        <div class="faq-body">以官方页面预约时段与当地装维安排为准。常见情况是提交信息后一至三个工作日内上门，具体以官方确认为准。</div>
+        <div class="faq-body">以官方页面预约时段与当地装维排期为准，具体以官方确认为准。</div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q" aria-hidden="true">问四</span>办完之后遇到网络问题找谁？</summary>
         <div class="faq-body">装机与用网问题请经官方客服通道反馈，进度可查。本站仅做信息导航，不参与办理、装机与售后环节。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" aria-hidden="true">问五</span>老房子能装光纤宽带吗？</summary>
+        <div class="faq-body">多数老小区已完成光纤改造，可在官方页面填写地址查询是否覆盖；未覆盖区域以官方页面答复为准。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q" aria-hidden="true">问六</span>装机当天家里需要留人吗？</summary>
+        <div class="faq-body">需要，师傅上门施工与调测通常要求有人在场配合确认位置并验收，具体安排以官方页面预约为准。</div>
       </details>
     </div>
   </div>
@@ -421,7 +472,7 @@ html.js .seal.stamped { animation: stamp .5s cubic-bezier(.2, 1.4, .4, 1) forwar
 <section class="section cta-final reveal" aria-labelledby="h-cta">
   <div class="wrap">
     <div class="section-head">
-      <p class="section-tag">其四 · 启程</p>
+      <p class="section-tag">其五 · 启程</p>
       <h2 id="h-cta">渠已修好 只待放水</h2>
       <p class="section-desc">四步已明，风景已看。余下的事，交给官方页面。</p>
     </div>
@@ -437,34 +488,30 @@ html.js .seal.stamped { animation: stamp .5s cubic-bezier(.2, 1.4, .4, 1) forwar
     <h2>四通八达 · 友情链接</h2>
     <p class="footer-sub">同站导航与外部站点，均为当前有效链接。</p>
     <nav class="link-groups" aria-label="友情链接">
-      <section aria-label="本站导航">
-        <h3>本站导航</h3>
+      <section aria-label="站内导航">
+        <h3>站内导航</h3>
         <ul>
           <li><a href="../index.html">宽带办理导航（主站）</a></li>
           <li><a href="../xingka/index.html">星卡宽带</a></li>
           <li><a href="../r172/index.html">172宽带</a></li>
           <li><a href="../xinyao/index.html">好卡新耀宽带</a></li>
-        </ul>
-      </section>
-      <section aria-label="同类站点">
-        <h3>同类站点</h3>
-        <ul>
           <li><a href="../kaka/index.html">咔咔通信宽带</a></li>
           <li><a href="../dandan/index.html">蛋蛋宽带</a></li>
         </ul>
       </section>
-      <section aria-label="外部链接">
-        <h3>外部链接</h3>
+      <section aria-label="外部站点">
+        <h3>外部站点</h3>
         <ul>
-          <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">号卡一站通<svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"/></svg></a></li>
-          <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">云川流量卡<svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"/></svg></a></li>
-          <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">独立靓号网<svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+          <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">券宝<svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+          <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">优惠聚合<svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+          <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">号卡办理中心<svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"/></svg></a></li>
         </ul>
       </section>
     </nav>
     <div class="footer-note">
-      <p>本页为第三方导流页，非运营商官方网站；下单、支付与售后均在官方页面进行。</p>
-      <p>资费说明与套餐档位以官方页面实时信息为准，本页不构成任何资费承诺。</p>
+      <p>本页为第三方导流页，非运营商官方网站。</p>
+      <p>宽带办理、下单与售后均在官方页面完成。</p>
+      <p>资费说明与套餐档位以官方页面实时显示为准。</p>
     </div>
     <p class="footer-copy">© 2026 灵渠宽带 · 引路页</p>
   </div>
@@ -478,11 +525,18 @@ document.documentElement.classList.add('js');
   /* 卷轴展开：区块进入视口时依次呈现（无 IO 时直接展开，白屏防护） */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
+    /* 注意：新 Chromium 的 IO 会把 clip-path 计入交集——初始裁空态会使
+       isIntersecting 恒为 false 造成死锁。故改用 boundingClientRect
+       （不受裁剪影响）与视口手动求交，语义等价且跨浏览器一致。 */
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('shown'); io.unobserve(e.target); }
+        var r = e.boundingClientRect;
+        if (r.top < window.innerHeight && r.bottom > 0) {
+          e.target.classList.add('shown');
+          io.unobserve(e.target);
+        }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0 });
     reveals.forEach(function (el) { io.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add('shown'); });

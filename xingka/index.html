@@ -173,6 +173,14 @@ a { color: var(--c-primary); }
 .scene-list li { display: flex; align-items: center; gap: .45rem; font-size: .88rem; color: var(--c-sub); }
 .scene-list svg { color: var(--c-accent); flex: none; }
 
+/* ---- 星速课堂（补丁 08 · Phase B）：三小节轨道卡，宽屏三等分 ---- */
+@media (min-width: 1024px) {
+  .orbit-grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1023px) {
+  .orbit-grid-3 .orbit-card:last-child { grid-column: 1 / -1; }
+}
+
 /* ---- 星速演示器 ---- */
 .speed-demo {
   background: var(--c-card); border: 1px solid var(--c-line);
@@ -333,7 +341,11 @@ a { color: var(--c-primary); }
         { "@type": "Question", "name": "星卡宽带的资费是多少？",
           "acceptedAnswer": { "@type": "Answer", "text": "本站为办理指引页，不展示具体资费；办理将在渠道官方页面完成，资费以官方页面为准。" } },
         { "@type": "Question", "name": "如何确认所在地址是否支持安装？",
-          "acceptedAnswer": { "@type": "Answer", "text": "覆盖范围因地区而异，可在官方页面查询或咨询客服，确认安装地址是否支持星卡宽带。" } }
+          "acceptedAnswer": { "@type": "Answer", "text": "覆盖范围因地区而异，可在官方页面查询或咨询客服，确认安装地址是否支持星卡宽带。" } },
+        { "@type": "Question", "name": "宽带和手机流量卡有什么区别？",
+          "acceptedAnswer": { "@type": "Answer", "text": "宽带是家庭固定网络，由光纤入户提供不限量供给，适合电视、电脑等固定设备长时使用；手机流量卡面向移动场景。本页办理入口默认直达宽带专区，无需另行寻找。" } },
+        { "@type": "Question", "name": "办理前需要自备哪些设备？",
+          "acceptedAnswer": { "@type": "Answer", "text": "光猫通常由装机师傅携带上门调试；路由器可自备或按官方页面提供的选项选购，具体设备要求以官方页面说明为准。" } }
       ]
     }
   ]
@@ -486,7 +498,36 @@ a { color: var(--c-primary); }
     </div>
   </section>
 
-  <!-- ⑤ FAQ -->
+  <!-- ⑤ 星速课堂：带宽档位怎么选（补丁 08 · Phase B 内容增强） -->
+  <section class="section" aria-labelledby="classroom-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="classroom-title">星速课堂：带宽档位怎么选</h2>
+        <p>人数、延迟、环境，三个角度帮您选对档位</p>
+      </div>
+      <div class="orbit">
+        <div class="orbit-grid orbit-grid-3">
+          <article class="orbit-card">
+            <div class="orbit-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-wifi"/></svg></div>
+            <h3>按家里人数估</h3>
+            <p>1-2 人日常追剧办公选起步档即可；3 人以上全家多设备同时在线建议更高档位；有直播、NAS、智能家居联动需求看高档位。</p>
+          </article>
+          <article class="orbit-card">
+            <div class="orbit-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-zap"/></svg></div>
+            <h3>带宽和延迟是两回事</h3>
+            <p>带宽决定同时看几路高清不卡；延迟（响应速度）决定游戏对战、视频通话的即时体验；两者都受线路质量影响，办理后可先用测速页验证。</p>
+          </article>
+          <article class="orbit-card">
+            <div class="orbit-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-tool"/></svg></div>
+            <h3>别只看数字</h3>
+            <p>标注速率是理想条件下的上限，实际体验受路由器性能、终端网卡、墙体遮挡影响；设备较老时，升档不如先换路由。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ FAQ -->
   <section class="section" aria-labelledby="faq-title">
     <div class="container">
       <div class="section-head">
@@ -514,11 +555,19 @@ a { color: var(--c-primary); }
           <summary><h3>如何确认所在地址是否支持安装？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
           <p class="faq-answer">覆盖范围因地区而异，可在官方页面查询或咨询客服，确认安装地址是否支持星卡宽带。</p>
         </details>
+        <details class="faq-item">
+          <summary><h3>宽带和手机流量卡有什么区别？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">宽带是家庭固定网络，由光纤入户提供不限量供给，适合电视、电脑等固定设备长时使用；手机流量卡面向移动场景。本页办理入口默认直达宽带专区，无需另行寻找。</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>办理前需要自备哪些设备？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">光猫通常由装机师傅携带上门调试；路由器可自备或按官方页面提供的选项选购，具体设备要求以官方页面说明为准。</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- ⑥ 底部 CTA -->
+  <!-- ⑦ 底部 CTA -->
   <section class="section" aria-labelledby="cta-title">
     <div class="container">
       <div class="final-cta">
@@ -542,9 +591,9 @@ a { color: var(--c-primary); }
         <li><a href="../kaka/index.html">咔咔通信宽带</a></li>
         <li><a href="../dandan/index.html">蛋蛋宽带</a></li>
         <li><a href="../lingqu/index.html">灵渠宽带</a></li>
-        <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">jdjdndn.github.io</a></li>
-        <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">wcbblll.cc</a></li>
-        <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">dlhaoka.com</a></li>
+        <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">券宝</a></li>
+        <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">优惠聚合</a></li>
+        <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">号卡办理中心</a></li>
       </ul>
     </nav>
     <p class="footer-note">本站为星卡宽带办理指引页（非渠道官方网站），办理将在渠道官方页面完成，资费以官方页面为准。</p>
