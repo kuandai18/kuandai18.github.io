@@ -1,0 +1,27 @@
+# broadband-portal 站群 · https://kuandai18.github.io/
+# 纯静态站点，欢迎搜索引擎与主流 AI 爬虫抓取全部公开页面。
+# （AI 爬虫如 GPTBot、ClaudeBot 等未做任何限制，适用下方通配规则）
+
+User-agent: *
+Allow: /
+
+# AI 爬虫允许（GEO / 生成式引擎优化）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://kuandai18.github.io/sitemap.xml

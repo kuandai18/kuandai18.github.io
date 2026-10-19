@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>172宽带办理 - 套餐亮点与在线申请入口</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23E8ECF1'/%3E%3Ccircle cx='14.6' cy='14.6' r='9' fill='%23FFFFFF'/%3E%3Ccircle cx='17.4' cy='17.4' r='9' fill='%23C6CCD6'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23E8ECF1' stroke='%230E7C66' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%230E7C66'/%3E%3C/svg%3E">
+<meta name="description" content="172宽带在线办理指引：套餐亮点、办理流程与常见问题一站式说明，提供带宽需求测算工具，直达官方页面快速申请。">
+<meta name="keywords" content="172宽带办理,172宽带申请,172宽带">
+<link rel="canonical" href="https://kuandai18.github.io/r172/">
+<meta property="og:title" content="172宽带办理 - 套餐亮点与在线申请入口">
+<meta property="og:description" content="172宽带在线办理指引：套餐亮点、办理流程与常见问题一站式说明，提供带宽需求测算工具，直达官方页面快速申请。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kuandai18.github.io/r172/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="宽带办理导航">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="172宽带办理 - 套餐亮点与在线申请入口">
+<meta name="twitter:description" content="172宽带在线办理指引：套餐亮点、办理流程与常见问题一站式说明，提供带宽需求测算工具，直达官方页面快速申请。">
+<style>
+/* ============================================================
+   172宽带子站 · 新拟态（Soft UI）清新数字风（design.md §1.3.3）
+   配色：浅冷灰 #E8ECF1 / 青绿 #0E7C66 / 正文 #26313B
+   版式：全站唯一的居中窄栏单列布局（max-width: 880px）
+   ============================================================ */
+:root {
+  --c-bg: #E8ECF1;
+  --c-primary: #0E7C66;
+  --c-primary-deep: #0A5F4F;
+  --c-text: #26313B;
+  --c-sub: #4A5A68;
+  --c-shadow-dark: #C6CCD6;
+  --c-shadow-light: #FFFFFF;
+  --raise: 8px 8px 16px var(--c-shadow-dark), -8px -8px 16px var(--c-shadow-light);
+  --press: inset 5px 5px 10px var(--c-shadow-dark), inset -5px -5px 10px var(--c-shadow-light);
+  --radius: 20px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { overflow-x: clip; scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-x: clip;
+  padding: 1.2rem 0 0;
+}
+/* 居中窄栏单列：全站唯一 */
+.container { width: min(880px, 92%); margin-inline: auto; }
+h1, h2, h3 { line-height: 1.35; font-weight: 600; }
+.num, .calc-result { font-variant-numeric: tabular-nums; }
+a { color: var(--c-primary); }
+:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 3px; border-radius: 4px; }
+
+/* ---- 跳转主内容（无障碍） ---- */
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  padding: .6rem 1.2rem; background: var(--c-primary); color: #fff;
+  font-weight: 700; border-radius: 10px; text-decoration: none;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 1rem; color: #fff; }
+
+/* ---- 页头 ---- */
+.site-header { margin-bottom: 2.2rem; }
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.brand-wrap { display: flex; align-items: center; gap: .7rem; }
+.brand { font-weight: 700; font-size: 1.05rem; }
+.badge {
+  font-size: .75rem; color: var(--c-primary);
+  background: var(--c-bg); box-shadow: var(--raise);
+  padding: .18rem .65rem; border-radius: 999px;
+}
+.site-nav a { color: var(--c-sub); text-decoration: none; font-size: .95rem; }
+.site-nav a:hover { color: var(--c-primary); }
+
+/* ---- 区块通用 ---- */
+.section { margin-bottom: 2.6rem; }
+.section-head { text-align: center; margin-bottom: 1.8rem; }
+.section-head h2 { font-size: clamp(1.35rem, 3.4vw, 1.8rem); }
+.section-head p { color: var(--c-sub); margin-top: .4rem; font-size: .95rem; }
+
+/* ---- 浮凸卡基类 ---- */
+.card {
+  background: var(--c-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--raise);
+  padding: 1.8rem;
+}
+
+/* ---- Hero：浮凸大卡 ---- */
+.hero-card { padding: clamp(1.8rem, 5vw, 3rem); }
+.hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+.hero-eyebrow {
+  color: var(--c-primary); font-size: .82rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; margin-bottom: .9rem;
+}
+.hero h1 { font-size: clamp(1.9rem, 5.5vw, 3rem); margin-bottom: .7rem; }
+.hero-slogan { font-size: clamp(1.05rem, 2.4vw, 1.25rem); color: var(--c-primary); font-weight: 600; margin-bottom: .9rem; }
+.hero-desc { color: var(--c-sub); margin-bottom: 1.6rem; max-width: 40em; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .8rem 1.9rem; border-radius: 14px;
+  font-size: 1.02rem; font-weight: 700; text-decoration: none;
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+.btn-primary {
+  background: var(--c-primary); color: #fff;
+  box-shadow: 6px 6px 14px var(--c-shadow-dark), -6px -6px 14px var(--c-shadow-light);
+}
+.btn-primary:hover { background: var(--c-primary-deep); color: #fff; }
+.btn-primary:active { box-shadow: var(--press); transform: scale(.98); }
+.hero-figure {
+  width: 128px; height: 128px; border-radius: 50%;
+  background: var(--c-bg); box-shadow: var(--raise);
+  display: grid; place-items: center; color: var(--c-primary);
+}
+
+/* ---- 服务矩阵：2×2 图标卡 ---- */
+.matrix { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+.matrix-card { display: flex; gap: 1rem; align-items: flex-start; padding: 1.5rem; }
+.matrix-icon {
+  flex: none; width: 54px; height: 54px; border-radius: 50%;
+  background: var(--c-bg); box-shadow: var(--raise);
+  display: grid; place-items: center; color: var(--c-primary);
+}
+.matrix-card h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+.matrix-card p { color: var(--c-sub); font-size: .92rem; }
+
+/* ---- 带宽测算器（特色交互） ---- */
+.calc-card { padding: 1.8rem clamp(1.2rem, 4vw, 2.2rem); }
+.fieldset { border: none; margin-bottom: 1.5rem; }
+.fieldset legend { font-weight: 700; font-size: 1rem; padding: 0 0 .7rem; }
+.opt-list { display: flex; flex-wrap: wrap; gap: .8rem; }
+.opt {
+  display: inline-flex; align-items: center; gap: .55rem;
+  background: var(--c-bg); box-shadow: var(--raise);
+  border-radius: 14px; padding: .6rem 1.1rem;
+  cursor: pointer; font-size: .95rem; user-select: none;
+  transition: box-shadow .18s ease;
+}
+.opt input { accent-color: var(--c-primary); width: 17px; height: 17px; flex: none; }
+.opt:has(input:checked) { box-shadow: var(--press); color: var(--c-primary); font-weight: 700; }
+.opt:has(input:focus-visible) { outline: 2px solid var(--c-primary); outline-offset: 3px; }
+.calc-result {
+  background: var(--c-bg); box-shadow: var(--press);
+  border-radius: 14px; padding: 1.1rem 1.3rem;
+  font-weight: 700; color: var(--c-primary); font-size: 1.05rem;
+}
+.calc-hint { color: var(--c-sub); font-size: .84rem; margin-top: .7rem; }
+.calc-table-wrap { overflow-x: auto; margin-top: 1.3rem; }
+.calc-table { width: 100%; border-collapse: collapse; font-size: .9rem; background: var(--c-bg); box-shadow: var(--raise); border-radius: 12px; overflow: hidden; }
+.calc-table caption { text-align: left; color: var(--c-sub); font-size: .85rem; padding: .7rem .8rem .3rem; }
+.calc-table th, .calc-table td { text-align: left; padding: .5rem .8rem; }
+.calc-table thead th { color: var(--c-sub); font-weight: 600; border-bottom: 1px solid var(--c-shadow-dark); }
+.calc-table td { font-variant-numeric: tabular-nums; }
+
+/* ---- 三步办理 ---- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; counter-reset: step; }
+.step-card { text-align: center; padding: 1.6rem 1.2rem; }
+.step-num {
+  width: 46px; height: 46px; margin: 0 auto .9rem; border-radius: 50%;
+  background: var(--c-bg); box-shadow: var(--raise);
+  display: grid; place-items: center; color: var(--c-primary);
+  font-weight: 800; font-size: 1.1rem; font-variant-numeric: tabular-nums;
+}
+.step-card h3 { font-size: 1.02rem; margin-bottom: .35rem; }
+.step-card p { color: var(--c-sub); font-size: .9rem; }
+
+/* ---- FAQ ---- */
+.faq-list { display: grid; gap: 1.1rem; }
+.faq-item { padding: 0; overflow: hidden; }
+.faq-item summary {
+  cursor: pointer; list-style: none; display: flex;
+  align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.05rem 1.3rem; font-weight: 700;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary svg { flex: none; color: var(--c-primary); transition: transform .25s ease; }
+.faq-item[open] summary svg { transform: rotate(180deg); }
+.faq-item summary h3 { font-size: .98rem; }
+.faq-answer { padding: 0 1.3rem 1.1rem; color: var(--c-sub); font-size: .94rem; }
+
+/* ---- 底部 CTA ---- */
+.final-cta { text-align: center; padding: 2.6rem 1.5rem; }
+.final-cta h2 { font-size: clamp(1.35rem, 3.6vw, 1.9rem); margin-bottom: .6rem; }
+.final-cta p { color: var(--c-sub); margin-bottom: 1.6rem; }
+
+/* ---- 页脚 ---- */
+.site-footer { padding: 2.4rem 0 2rem; margin-top: 1.6rem; }
+.footer-title { font-size: 1rem; margin-bottom: .9rem; }
+.link-list { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; margin-bottom: 1.2rem; }
+.link-list a { color: var(--c-sub); text-decoration: none; font-size: .92rem; }
+.link-list a:hover { color: var(--c-primary); }
+.footer-note { color: var(--c-sub); font-size: .85rem; margin-bottom: .5rem; max-width: 52em; }
+.copyright { color: var(--c-sub); font-size: .82rem; opacity: .75; }
+
+/* ---- 响应式 ---- */
+@media (max-width: 767px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-figure { display: none; }
+  .matrix { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .header-inner { justify-content: center; }
+}
+
+/* ---- 动效降级 ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "172宽带办理",
+      "serviceType": "宽带办理",
+      "url": "https://kuandai18.github.io/r172/",
+      "inLanguage": "zh-CN",
+      "description": "172宽带办理指引：套餐亮点、办理流程与常见问题，直达官方办理页面。",
+      "provider": { "@type": "Organization", "name": "宽带办理导航中心", "url": "https://kuandai18.github.io/" },
+      "areaServed": { "@type": "Country", "name": "中国" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://kuandai18.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "172宽带", "item": "https://kuandai18.github.io/r172/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "172宽带适合什么样的家庭？",
+          "acceptedAnswer": { "@type": "Answer", "text": "172宽带主打大带宽家庭宽带，适合全屋多设备高速上网的家庭；可选档位以官方页面为准。" } },
+        { "@type": "Question", "name": "如何估算家里需要多大带宽？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可使用本页“带宽需求测算器”，按设备数与用途获取推荐档位；实际可选档位以官方页面为准。" } },
+        { "@type": "Question", "name": "办理后多久能上门安装？",
+          "acceptedAnswer": { "@type": "Answer", "text": "提交申请后由官方安排确认与安装时间，具体周期以官方页面或客服答复为准。" } },
+        { "@type": "Question", "name": "172宽带的套餐资费是多少？",
+          "acceptedAnswer": { "@type": "Answer", "text": "本站为办理指引页，不展示具体资费；办理将在渠道官方页面完成，资费以官方页面为准。" } },
+        { "@type": "Question", "name": "如何确认所在地址能否办理？",
+          "acceptedAnswer": { "@type": "Answer", "text": "覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。" } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<!-- 内联 SVG 图标库（线性风格，aria-hidden 装饰） -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-router" viewBox="0 0 24 24"><rect x="2" y="13" width="20" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="12" y1="13" x2="12" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8.5" y1="4.5" x2="15.5" y2="4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="6.5" cy="17" r="1.2" fill="currentColor"/><circle cx="10.5" cy="17" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="12 5 19 12 12 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand-wrap">
+      <span class="brand">172宽带</span>
+      <span class="badge">官方合作导流页</span>
+    </div>
+    <nav class="site-nav" aria-label="站内导航">
+      <a href="../index.html">← 返回主站</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ① Hero：浮凸大卡 -->
+  <section class="hero section" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="card hero-card">
+        <div class="hero-grid">
+          <div>
+            <p class="hero-eyebrow">172 Broadband · 数字生活的管家</p>
+            <h1 id="hero-title">172宽带</h1>
+            <p class="hero-slogan">大带宽家庭宽带，全屋高速上网</p>
+            <p class="hero-desc">172宽带办理入口，主打大带宽家庭宽带，适合全屋多设备高速上网。点击下方按钮前往官方页面，套餐与资费以官方页面为准。</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://ruijie.172xianxia.cn/kd_home/59bc0abc9a7d31f5" target="_blank" rel="noopener" data-channel="r172">前往官方页面办理<svg width="18" height="18" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </div>
+          <div class="hero-figure" aria-hidden="true">
+            <svg width="56" height="56"><use href="#i-router"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② 服务矩阵：2×2 图标卡 -->
+  <section class="section" aria-labelledby="matrix-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="matrix-title">服务一览</h2>
+        <p>帮你选对带宽的每一步服务</p>
+      </div>
+      <div class="matrix">
+        <article class="card matrix-card">
+          <div class="matrix-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-zap"/></svg></div>
+          <div>
+            <h3>极速带宽</h3>
+            <p>主打大带宽家庭宽带，多设备同时在线也能保持流畅。</p>
+          </div>
+        </article>
+        <article class="card matrix-card">
+          <div class="matrix-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-tool"/></svg></div>
+          <div>
+            <h3>上门安装</h3>
+            <p>提交申请后由官方安排上门安装，装维事宜以官方约定为准。</p>
+          </div>
+        </article>
+        <article class="card matrix-card">
+          <div class="matrix-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-download"/></svg></div>
+          <div>
+            <h3>线上办理</h3>
+            <p>点击办理入口直达官方页面，在线完成申请提交。</p>
+          </div>
+        </article>
+        <article class="card matrix-card">
+          <div class="matrix-icon"><svg width="24" height="24" aria-hidden="true"><use href="#i-phone"/></svg></div>
+          <div>
+            <h3>客服支持</h3>
+            <p>办理与使用问题均可咨询官方客服，以官方渠道答复为准。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ 带宽测算器（特色交互） -->
+  <section class="section" aria-labelledby="calc-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="calc-title">带宽需求测算</h2>
+        <p>选择设备数与用途，即时获取推荐档位</p>
+      </div>
+      <div class="card calc-card">
+        <form id="calc-form">
+          <fieldset class="fieldset">
+            <legend>同时在线设备数</legend>
+            <div class="opt-list">
+              <label class="opt"><input type="radio" name="b-devices" value="100" checked> 1~3 台</label>
+              <label class="opt"><input type="radio" name="b-devices" value="300"> 4~8 台</label>
+              <label class="opt"><input type="radio" name="b-devices" value="500"> 9 台以上</label>
+            </div>
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend>主要用途（可多选）</legend>
+            <div class="opt-list">
+              <label class="opt"><input type="checkbox" name="b-usage" value="0"> 网页办公</label>
+              <label class="opt"><input type="checkbox" name="b-usage" value="100"> 高清影视</label>
+              <label class="opt"><input type="checkbox" name="b-usage" value="200"> 大型游戏·直播</label>
+              <label class="opt"><input type="checkbox" name="b-usage" value="100"> 智能家居多设备</label>
+            </div>
+          </fieldset>
+          <p class="calc-result" aria-live="polite">推荐带宽：300M（覆盖高清影视与多设备同时在线）。实际可选档位以官方页面为准。</p>
+          <p class="calc-hint">测算规则：设备数给出基线（100 / 300 / 500 Mbps），用途叠加（网页办公 +0、高清影视 +100、大型游戏·直播 +200、智能家居 +100）；总分 &lt;100 → 100M，100~299 → 300M，≥300 → 500M 及以上。</p>
+        </form>
+        <noscript>
+          <div class="calc-table-wrap">
+            <table class="calc-table">
+              <caption>设备数 × 用途 → 推荐档位 速查表（完整规则以页面说明为准）</caption>
+              <thead><tr><th scope="col">设备数 \ 用途</th><th scope="col">网页办公为主</th><th scope="col">有高清影视</th><th scope="col">有游戏·直播或全屋智能</th></tr></thead>
+              <tbody>
+                <tr><td>1~3 台</td><td>300M</td><td>300M</td><td>500M 及以上</td></tr>
+                <tr><td>4~8 台</td><td>500M 及以上</td><td>500M 及以上</td><td>500M 及以上</td></tr>
+                <tr><td>9 台以上</td><td>500M 及以上</td><td>500M 及以上</td><td>500M 及以上</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 三步办理 -->
+  <section class="section" aria-labelledby="steps-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="steps-title">三步办理</h2>
+        <p>简明清单式的办理路径</p>
+      </div>
+      <ol class="steps">
+        <li class="card step-card">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>在线提交</h3>
+          <p>点击办理入口直达官方页面，在线填写申请信息。</p>
+        </li>
+        <li class="card step-card">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>选择套餐</h3>
+          <p>结合测算结果挑选带宽档位，资费以官方页面为准。</p>
+        </li>
+        <li class="card step-card">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>预约安装</h3>
+          <p>官方确认后预约上门安装，完成开通即可使用。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ⑤ FAQ -->
+  <section class="section" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="faq-title">常见问题</h2>
+        <p>关于 172 宽带办理的高频疑问</p>
+      </div>
+      <div class="faq-list">
+        <details class="card faq-item">
+          <summary><h3>172宽带适合什么样的家庭？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">172宽带主打大带宽家庭宽带，适合全屋多设备高速上网的家庭；可选档位以官方页面为准。</p>
+        </details>
+        <details class="card faq-item">
+          <summary><h3>如何估算家里需要多大带宽？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">可使用本页“带宽需求测算器”，按设备数与用途获取推荐档位；实际可选档位以官方页面为准。</p>
+        </details>
+        <details class="card faq-item">
+          <summary><h3>办理后多久能上门安装？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">提交申请后由官方安排确认与安装时间，具体周期以官方页面或客服答复为准。</p>
+        </details>
+        <details class="card faq-item">
+          <summary><h3>172宽带的套餐资费是多少？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">本站为办理指引页，不展示具体资费；办理将在渠道官方页面完成，资费以官方页面为准。</p>
+        </details>
+        <details class="card faq-item">
+          <summary><h3>如何确认所在地址能否办理？</h3><svg width="18" height="18" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p class="faq-answer">覆盖范围因地区而异，可在官方页面查询或咨询客服确认安装地址。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ 底部 CTA -->
+  <section class="section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="card final-cta">
+        <h2 id="cta-title">选好档位，现在就去办理</h2>
+        <p>直达 172 宽带官方页面，在线完成申请，资费以官方页面为准。</p>
+        <a class="btn btn-primary" href="https://ruijie.172xianxia.cn/kd_home/59bc0abc9a7d31f5" target="_blank" rel="noopener" data-channel="r172">前往官方页面办理<svg width="18" height="18" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-links" aria-label="友情链接">
+      <h2 class="footer-title">友情链接</h2>
+      <ul class="link-list">
+        <li><a href="../index.html">宽带办理导航（主站）</a></li>
+        <li><a href="../xingka/index.html">星卡宽带</a></li>
+        <li><a href="../xinyao/index.html">好卡新耀宽带</a></li>
+        <li><a href="../kaka/index.html">咔咔通信宽带</a></li>
+        <li><a href="../dandan/index.html">蛋蛋宽带</a></li>
+        <li><a href="../lingqu/index.html">灵渠宽带</a></li>
+        <li><a href="https://jdjdndn.github.io/" target="_blank" rel="noopener">jdjdndn.github.io</a></li>
+        <li><a href="https://wcbblll.cc" target="_blank" rel="noopener">wcbblll.cc</a></li>
+        <li><a href="https://dlhaoka.com" target="_blank" rel="noopener">dlhaoka.com</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">本站为172宽带办理指引页（非渠道官方网站），办理将在渠道官方页面完成，资费以官方页面为准。</p>
+    <p class="copyright">© 2026 宽带办理导航 · 仅供信息导航</p>
+  </div>
+</footer>
+
+<script src="../data.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /**
+   * 带宽测算器：纯前端确定性规则（规则公开写死便于核对）。
+   * 设备数基线：1~3 台=100 / 4~8 台=300 / 9 台以上=500（Mbps）；
+   * 用途叠加：网页办公 +0 / 高清影视 +100 / 大型游戏·直播 +200 / 智能家居 +100；
+   * 输出：总分 <100 → 100M；100~299 → 300M；≥300 → 500M 及以上。
+   * 结果区 aria-live="polite" 实时播报。
+   */
+  var form = document.getElementById('calc-form');
+  var result = document.querySelector('.calc-result');
+
+  function tierOf(total) {
+    if (total < 100) { return { tier: '100M', scene: '满足网页办公等轻量使用' }; }
+    if (total < 300) { return { tier: '300M', scene: '覆盖高清影视与多设备同时在线' }; }
+    return { tier: '500M 及以上', scene: '从容支撑游戏、直播与全屋智能设备' };
+  }
+
+  function calc() {
+    var dev = form.querySelector('input[name="b-devices"]:checked');
+    var total = dev ? parseInt(dev.value, 10) : 0;
+    Array.prototype.forEach.call(form.querySelectorAll('input[name="b-usage"]:checked'), function (c) {
+      total += parseInt(c.value, 10);
+    });
+    var r = tierOf(total);
+    result.textContent = '推荐带宽：' + r.tier + '（' + r.scene + '）。实际可选档位以官方页面为准。';
+  }
+
+  if (form) {
+    form.addEventListener('change', calc);
+    calc(); /* 初始即播报默认选择的结果 */
+  }
+
+  /**
+   * data.js 一致性自检（NFR-018 维护性护栏）：
+   * 遍历 [data-channel] 链接，与 kuandaiList 的 url 逐字符比对，
+   * 不一致时输出 console.warn，访客无感知。
+   */
+  if (typeof kuandaiList !== 'undefined' && Array.isArray(kuandaiList)) {
+    var expect = {};
+    kuandaiList.forEach(function (c) { expect[c.slug] = c.url; });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-channel]'), function (a) {
+      var slug = a.getAttribute('data-channel');
+      if (expect[slug] && a.getAttribute('href') !== expect[slug]) {
+        console.warn('[data.js 一致性] ' + slug + ' 的办理链接与 data.js 不一致，请同步更新。');
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

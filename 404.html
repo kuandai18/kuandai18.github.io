@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 页面走丢了 - 宽带办理导航</title>
+  <meta name="description" content="您访问的页面不存在或已被移动。从这里可以返回宽带办理导航首页，或前往星卡、172、好卡新耀、咔咔通信、蛋蛋、灵渠等宽带办理子站。">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    /* ===== 宽带办理导航 · 404 页（深色科技风，与站群暗色主题协调） ===== */
+    :root {
+      --c-bg: #0A1128;
+      --c-card: #101B3D;
+      --c-primary: #4D9FFF;
+      --c-primary-soft: #6FB1FF;
+      --c-accent: #FFD166;
+      --c-text: #EAF1FF;
+      --c-text-sub: #A8BCDD;
+      --c-line: #23315C;
+      --radius: 14px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { overflow-x: clip; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--c-text);
+      background-color: var(--c-bg);
+      background-image:
+        radial-gradient(640px 420px at 12% -8%, rgba(77, 159, 255, .16), transparent 62%),
+        radial-gradient(520px 380px at 92% 108%, rgba(77, 159, 255, .10), transparent 60%);
+      background-repeat: no-repeat;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== 主视觉区 ===== */
+    main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 56px 0 40px; }
+    .hero { text-align: center; }
+    .badge {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(77, 159, 255, .08);
+      border: 1px solid var(--c-line);
+      animation: badge-pulse 3.2s ease-in-out infinite;
+    }
+    .badge svg { width: 52px; height: 52px; }
+    @keyframes badge-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(77, 159, 255, .30); }
+      50% { box-shadow: 0 0 34px 4px rgba(77, 159, 255, .14); }
+    }
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .32em;
+      text-indent: .32em;
+      color: var(--c-primary-soft);
+    }
+    .code {
+      font-size: clamp(4.5rem, 15vw, 8rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: .04em;
+      font-variant-numeric: tabular-nums;
+      color: var(--c-primary);
+    }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+      .code {
+        background: linear-gradient(135deg, var(--c-primary) 20%, var(--c-accent) 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+    h1 { margin-top: 4px; font-size: clamp(1.5rem, 4.5vw, 2.25rem); font-weight: 700; }
+    .hero-desc { margin: 12px auto 28px; max-width: 34em; color: var(--c-text-sub); }
+    .btn-home {
+      display: inline-block;
+      padding: 13px 40px;
+      border-radius: 999px;
+      background: var(--c-primary);
+      color: #0A1128;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+    .btn-home:hover { background: var(--c-primary-soft); transform: translateY(-1px); }
+
+    /* ===== 站内导航区 ===== */
+    .sites { margin-top: 56px; }
+    .sites-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--c-text-sub);
+    }
+    .sites-title::before, .sites-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--c-line);
+    }
+    .site-grid {
+      margin-top: 20px;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr;
+    }
+    .site-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 20px;
+      background: var(--c-card);
+      border: 1px solid var(--c-line);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .site-card:hover, .site-card:focus-visible {
+      border-color: var(--c-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(3, 8, 26, .55);
+    }
+    .site-text { min-width: 0; }
+    .site-name { display: block; font-size: 17px; font-weight: 700; color: var(--c-text); }
+    .site-desc { display: block; margin-top: 2px; font-size: 14px; line-height: 1.6; color: var(--c-text-sub); }
+    .site-arrow { flex: none; width: 18px; height: 18px; color: var(--c-primary); }
+    .site-card:hover .site-arrow, .site-card:focus-visible .site-arrow { color: var(--c-accent); }
+
+    /* ===== 页脚 ===== */
+    footer { border-top: 1px solid var(--c-line); padding: 22px 0 26px; }
+    footer .wrap { text-align: center; font-size: 14px; color: var(--c-text-sub); }
+
+    /* ===== 焦点可见性 ===== */
+    a:focus-visible {
+      outline: 2px solid var(--c-accent);
+      outline-offset: 3px;
+    }
+
+    /* ===== 响应式（移动端优先） ===== */
+    @media (min-width: 640px) { .site-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .site-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* ===== 动效降级 ===== */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <!-- ===== 404 主视觉 ===== -->
+    <section class="hero" aria-labelledby="err-title">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 64 64" focusable="false">
+          <path d="M14 32A24.5 24.5 0 0 1 50 32" fill="none" stroke="#4D9FFF" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M22 39A13 13 0 0 1 42 39" fill="none" stroke="#4D9FFF" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="32" cy="48" r="3.2" fill="#4D9FFF"/>
+          <line x1="13" y1="51" x2="51" y2="13" stroke="#FFD166" stroke-width="4.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="eyebrow">ERROR · SIGNAL LOST</p>
+      <p class="code">404</p>
+      <h1 id="err-title">页面走丢了</h1>
+      <p class="hero-desc">您访问的页面不存在或已被移动。信号已重新连接，请从下方入口继续浏览宽带办理导航。</p>
+      <a class="btn-home" href="/">返回首页</a>
+    </section>
+
+    <!-- ===== 站内导航（6 个渠道子站） ===== -->
+    <nav class="sites" aria-label="站内导航">
+      <h2 class="sites-title">快速前往各宽带子站</h2>
+      <div class="site-grid">
+        <a class="site-card" href="/xingka/index.html">
+          <span class="site-text">
+            <span class="site-name">星卡宽带</span>
+            <span class="site-desc">套餐亮点、办理流程与常见问题，含带宽速度类比演示</span>
+          </span>
+          <svg class="site-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="site-card" href="/r172/index.html">
+          <span class="site-text">
+            <span class="site-name">172宽带</span>
+            <span class="site-desc">办理指引与带宽需求测算，三步完成线上申请</span>
+          </span>
+          <svg class="site-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="site-card" href="/xinyao/index.html">
+          <span class="site-text">
+            <span class="site-name">好卡新耀宽带</span>
+            <span class="site-desc">多档宽带套餐在线选购指引与申请入口</span>
+          </span>
+          <svg class="site-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="site-card" href="/kaka/index.html">
+          <span class="site-text">
+            <span class="site-name">咔咔通信宽带</span>
+            <span class="site-desc">直达宽带商品页，办理路径清晰</span>
+          </span>
+          <svg class="site-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="site-card" href="/dandan/index.html">
+          <span class="site-text">
+            <span class="site-name">蛋蛋宽带</span>
+            <span class="site-desc">套餐形式灵活，进入官方页后需切换到宽带分类</span>
+          </span>
+          <svg class="site-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="site-card" href="/lingqu/index.html">
+          <span class="site-text">
+            <span class="site-name">灵渠宽带</span>
+            <span class="site-desc">直达宽带商品分组的在线办理指引</span>
+          </span>
+          <svg class="site-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </nav>
+  </main>
+  <footer>
+    <div class="wrap">© 2026 宽带办理导航 · 仅供信息导航</div>
+  </footer>
+</body>
+</html>
